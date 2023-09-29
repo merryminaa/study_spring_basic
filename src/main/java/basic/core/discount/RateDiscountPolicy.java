@@ -3,14 +3,14 @@ package basic.core.discount;
 import basic.core.member.Grade;
 import basic.core.member.Member;
 
-public class FixDiscountPolicy implements DiscountPolicy {
+public class RateDiscountPolicy implements DiscountPolicy {
 
-    private int discountFixAmount = 1000; //정액 할인
+    private int discountRate = 10; //정률 할인
 
     @Override
     public int discount(Member member, int price) {
         if (member.getGrade() == Grade.VIP) {
-            return discountFixAmount;
+            return price * discountRate / 100;
         } else {
             return 0;
         }
