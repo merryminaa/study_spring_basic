@@ -17,7 +17,7 @@ class OrderServiceImplTest {
 
         OrderServiceImpl orderService = new OrderServiceImpl(memberRepository, new FixDiscountPolicy());
         Order order = orderService.createOrder(1L, "itemA", 10000);
-        org.assertj.core.api.Assertions.assertThat(order.getDiscountPrice()).isEqualTo(10000);
+        org.assertj.core.api.Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
 
 }
